@@ -9,7 +9,10 @@ const app = express()
 app.use(express.json())
 app.use(cors({
     origin: '*',
-    methods: ['GET', 'POST']
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,  // Erlaube Cookies oder andere Anmeldeinformationen
+    optionsSuccessStatus: 204  // Ein spezieller Statuscode für OPTIONS-Anfragen
 }))
 
 let sessions = new Set()
