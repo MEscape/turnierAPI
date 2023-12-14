@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/esche/3D Objects/TURNIER/BACKEND/keys.sqlite" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="1"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="450"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,4:mainkeys"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="keys" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_"><sort/><column_widths><column index="1" value="121"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1">INSERT INTO keys ('key') VALUES
+('F5gH8jK6L9mN2Q5t'),
+('V8xZ1cV4bN7mQ0zX'),
+('R5tY8uI1oP6aS9dF'),
+('G2hJ5kL8nO1pR4tY'),
+('U7iO0pA3sD6fG9jK'),
+('L4mN7qR0tU3wZ6cV'),
+('B9nM2qT5vX8yZ1cV'),
+('D4fG7jK0lN3pR6tY'),
+('U9iO2pA5sD8fG1jK'),
+('L6mN9qR2tU5wZ8cV'),
+('B7nM0qT3vX6yZ9cV'),
+('D0fG3jK6lN9pR2tY'),
+('U1iO4pA7sD0fG3jK'),
+('L8mN1qR4tU7wZ0cV'),
+('B5nM8qT1vX4yZ7cV'),
+('D2fG5jK8lN1pR4tY');</sql><current_tab id="0"/></tab_sql></sqlb_project>
