@@ -149,7 +149,9 @@ server.on('upgrade', (request, socket, head) => {
         })
     })
 })
-server.listen(3000, () => console.log('Secure server running on port 3000'))
+
+const PORT = process.env.PORT || 3000
+server.listen(PORT, () => console.log('Secure server running on port 3000'))
 
 //Erstellen WebSocket-Server
 const wss = new WebSocket.Server({
