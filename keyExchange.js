@@ -7,13 +7,7 @@ const WebSocket = require('ws')
 const app = express()
 
 app.use(express.json())
-app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,  // Erlaube Cookies oder andere Anmeldeinformationen
-    optionsSuccessStatus: 204  // Ein spezieller Statuscode für OPTIONS-Anfragen
-}))
+app.use(cors())
 
 let sessions = new Set()
 let finished = new Set()
