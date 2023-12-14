@@ -1,6 +1,5 @@
 const express = require('express')
-const https = require('https')
-const fs = require('fs')
+const http = require('http')
 const cors = require('cors')
 const sqlite3 = require('sqlite3').verbose()
 const crypto = require('crypto')
@@ -8,7 +7,9 @@ const WebSocket = require('ws')
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: 'https://turniermesc.onrender.com'
+}))
 
 let sessions = new Set()
 let finished = new Set()
@@ -16,14 +17,8 @@ let playerCount = 0
 let started = false
 let currentVisit = {one: null, two: null}
 
-//Verschlüsselung
-const options = {
-    key: fs.readFileSync('private-key.pem'),
-    cert: fs.readFileSync('certificate.pem')
-};
-
 //Create Server
-const server = https.createServer(options, app);
+const server = http.createServer(app)
 server.on('upgrade', (request, socket, head) => {
     wss.handleUpgrade(request, socket, head, ws => {
         wss.emit('connection', ws, request)
@@ -150,8 +145,9 @@ server.on('upgrade', (request, socket, head) => {
     })
 })
 
-const PORT = process.env.PORT || 3000
-server.listen(PORT, () => console.log('Secure server running on port 3000'))
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, () => console.log(`Secure server running on port ${PORT}`))
 
 //Erstellen WebSocket-Server
 const wss = new WebSocket.Server({
