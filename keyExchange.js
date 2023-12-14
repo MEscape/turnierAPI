@@ -1,5 +1,5 @@
 const express = require('express')
-const http = require('http')
+const https = require('https')
 const cors = require('cors')
 const sqlite3 = require('sqlite3').verbose()
 const crypto = require('crypto')
@@ -19,7 +19,7 @@ let started = false
 let currentVisit = {one: null, two: null}
 
 //Create Server
-const server = http.createServer(app)
+const server = https.createServer(app)
 server.on('upgrade', (request, socket, head) => {
     wss.handleUpgrade(request, socket, head, ws => {
         wss.emit('connection', ws, request)
