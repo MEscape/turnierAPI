@@ -1,5 +1,6 @@
 const express = require('express')
 const https = require('https')
+const fs = require('fs')
 const cors = require('cors')
 const sqlite3 = require('sqlite3').verbose()
 const crypto = require('crypto')
@@ -22,8 +23,14 @@ let playerCount = 0
 let started = false
 let currentVisit = {one: null, two: null}
 
+//Verschlüsselung
+const options = {
+    key: fs.readFileSync('private-key.pem'),
+    cert: fs.readFileSync('certificate.pem')
+};
+
 //Create Server
-const server = https.createServer(app)
+const server = https.createServer(options, app);
 server.on('upgrade', (request, socket, head) => {
     wss.handleUpgrade(request, socket, head, ws => {
         wss.emit('connection', ws, request)
